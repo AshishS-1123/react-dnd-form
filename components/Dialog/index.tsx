@@ -3,6 +3,7 @@ import React, { MouseEventHandler } from "react";
 export interface Props {
     isOpen: boolean,
     closeDialog: MouseEventHandler<HTMLButtonElement | HTMLDivElement>,
+    children?: JSX.Element
 }
 
 function Dialog(props: Props): JSX.Element {
@@ -20,6 +21,7 @@ function Dialog(props: Props): JSX.Element {
                 data-testid="dialog-content-testId"
                 style={{zIndex: "100"}}
             >
+                {props.children}
                 <button 
                     type="button"
                     role="button" 

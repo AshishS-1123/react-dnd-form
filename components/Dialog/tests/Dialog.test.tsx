@@ -67,4 +67,19 @@ describe ("Components : Dialog", () => {
         // Then, the closeDialogCallback should get called.
         expect(closeDialogCallback).toHaveBeenCalled();
     });
+
+    it("should render children in the content dialog",() => {
+        render(
+            <Dialog isOpen={true} closeDialog={() => {}}>
+                <p>This is the child</p>
+            </Dialog>
+        );
+
+        const childNode = screen.getByText('This is the child');
+        const dialogContentNode = screen.getByTestId(CONTENT_TEST_ID);
+
+        // The children should be rendered in the content node and not in the backdrop or anywhere else.
+        expect(childNode).toBeInTheDocument();
+        expect(childNode.parentNode).toBe(dialogContentNode);
+    });
 });
