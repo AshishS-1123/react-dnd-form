@@ -42,14 +42,14 @@ function CreationDialog(props: Props) {
     return (
         <form role="form">
             <label 
-                htmlFor="question-input"
-                id="question-label"
+                htmlFor="boolean-question-input"
+                id="boolean-question-label"
             >
                 Question you want the user to see
             </label>
 
             <input 
-                id="question-input" 
+                id="boolean-question-input" 
                 data-testid="element-boolean-creation-input"
                 value={inputQuestion}
                 onChange={handleInputChange}
