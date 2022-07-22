@@ -34,7 +34,7 @@ function AddOptionContainer(props: Props): JSX.Element {
     }
     
     return (
-        <>
+        <div data-testid="component-optionContainer-addContainer-mainContainer">
             <label id="add-option-container-key-label" htmlFor="add-option-container-key-input">
                 Key
             </label>
@@ -59,13 +59,14 @@ function AddOptionContainer(props: Props): JSX.Element {
             
             <p data-testid="add-option-container-error-node">{`${error}${props.errorMessage}`}</p>
 
-            <button 
+            <button
+                name="add-option-container-submit-button"
                 type="submit"
                 onClick={handleFormSubmit}
             >
                 Add Option
             </button>
-        </>
+        </div>
     );
 }
 

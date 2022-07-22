@@ -16,7 +16,7 @@ function OptionPreview(props: Props): JSX.Element {
     }
 
     return (
-        <>
+        <div data-testid="component-optionContainer-preview-mainContainer">
             <span className="component-optionContainer-preview-key">
                 {props.option.key}
             </span>
@@ -24,12 +24,13 @@ function OptionPreview(props: Props): JSX.Element {
                 {props.option.value}
             </span>
             <button 
+                data-testid="component-optionContainer-preview-delete"
                 className="component-optionContainer-preview-delete"
                 onClick={handleDeleteButtonClick}
             >
                 Delete
             </button>
-        </>
+        </div>
     );
 }
 
