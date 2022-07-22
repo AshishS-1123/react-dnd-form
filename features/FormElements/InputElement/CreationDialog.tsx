@@ -1,7 +1,7 @@
 import React, { ChangeEventHandler, MouseEventHandler, useState } from "react";
 
-type allowedInputTypes = "email" | "number" | "url" | "text" | "date" | "datetime-local";
-const allowedInputs = ["email", "number", "url", "text", "date", "datetime-local"];
+export type allowedInputTypes = "email" | "number" | "url" | "text" | "date" | "datetime-local";
+export const allowedInputs = ["email", "number", "url", "text", "date", "datetime-local"];
 
 export interface Props {
     onSubmit: (
