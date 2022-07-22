@@ -12,7 +12,7 @@ const VALUE_INPUT_TEST_ID = "add-option-container-value-input";
 const ERROR_NODE_TEST_ID = "add-option-container-error-node";
 const ERROR_MESSAGE = "Both inputs are compulsory.";
 
-describe("Components : Option Container", () => {
+describe("Components : Option Container : Add Option Container", () => {
     it("should contain the correct DOM elements", () => {
         // DOM elements that must be present are- Label1, Label2, Input1, Input2, Submit, P Tag.
         render(<AddOptionContainer addOption={() => {}} errorMessage=""/>);
