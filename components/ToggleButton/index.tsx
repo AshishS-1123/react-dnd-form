@@ -1,8 +1,8 @@
-import React, { MouseEventHandler } from "react";
+import React from "react";
 
 export interface Props {
     isOn: boolean,
-    toggleState: MouseEventHandler<HTMLDivElement>,
+    toggleState: () => void,
 };
 
 /**
