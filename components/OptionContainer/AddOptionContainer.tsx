@@ -28,9 +28,12 @@ function AddOptionContainer(props: Props): JSX.Element {
             return;
         }
 
-        setError("");
-
         props.addOption({key, value});
+
+        // Clear all inputs are errors after successfully submitting data.
+        setError("");
+        setKey("");
+        setValue("");
     }
     
     return (

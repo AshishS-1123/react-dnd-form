@@ -109,4 +109,26 @@ describe("Components : Option Container : Add Option Container", () => {
         // The callback should have been called with the correct parameters.
         expect(addOptionCallback).toHaveBeenCalledWith({ key: "Some random key", value: "Some random value" });
     });
+
+    it("should clear inputs after submitting", async () => {
+        const user = userEvent.setup();
+        const addOptionCallback = jest.fn();
+        render(<AddOptionContainer addOption={addOptionCallback} errorMessage=""/>);
+
+        const keyInputNode = screen.getByTestId(KEY_INPUT_TEST_ID);
+        const valueInputNode = screen.getByTestId(VALUE_INPUT_TEST_ID);
+        const submitButtonNode = screen.getByRole("button");
+        const errorNode = screen.getByTestId(ERROR_NODE_TEST_ID);
+
+        // Type text in both inputs.
+        await user.type(keyInputNode, "Some random key");
+        await user.type(valueInputNode, "Some random value");
+
+        // Click the submit button.
+        await user.click(submitButtonNode);
+
+        // Check that the inputs are clear.
+        expect(keyInputNode).toHaveValue("");
+        expect(valueInputNode).toHaveValue("");
+    });
 });
