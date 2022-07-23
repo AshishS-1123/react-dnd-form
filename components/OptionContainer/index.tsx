@@ -30,7 +30,7 @@ function OptionContainer(props: Props): JSX.Element {
     }
 
     return (
-        <>
+        <div data-testid="component-optionContainer-container">
             {
                 options.map(option => {
                     return (
@@ -48,7 +48,7 @@ function OptionContainer(props: Props): JSX.Element {
                 addOption={addOptionHandler}
                 errorMessage=""
             />
-        </>
+        </div>
     );
 }
 

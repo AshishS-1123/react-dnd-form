@@ -64,7 +64,7 @@ function AddOptionContainer(props: Props): JSX.Element {
 
             <button
                 name="add-option-container-submit-button"
-                type="submit"
+                type="button"
                 onClick={handleFormSubmit}
             >
                 Add Option

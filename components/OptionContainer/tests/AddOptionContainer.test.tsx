@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 
@@ -70,6 +70,9 @@ describe("Components : Option Container : Add Option Container", () => {
             } else {
                 await user.clear(valueInputNode);
             }
+
+            expect(keyInputNode).toHaveValue(keyValue.key);
+            expect(valueInputNode).toHaveValue(keyValue.value);
 
             // Click on the submit button.
             await user.click(submitButtonNode);
