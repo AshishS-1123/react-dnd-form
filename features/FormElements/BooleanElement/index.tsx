@@ -45,7 +45,7 @@ class BooleanElement implements FormElement {
     }
 
     getDisplayComponent(): JSX.Element {
-        return <DisplayName displayName={this.name} />;
+        return <DisplayName />;
     }
 
     toJSONString(): string {
