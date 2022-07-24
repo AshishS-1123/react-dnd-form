@@ -13,7 +13,7 @@ const ERROR_NODE_TEST_ID = "element-checkbox-creation-error";
 const OPTION_CONTAINER_TEST_ID = "component-optionContainer-container";
 const ERROR_MESSAGE = "Please provide at least one option";
 
-describe("Checkbox Element : Creation Dialog", () => {
+describe("Dropdown Element : Creation Dialog", () => {
     it("should contain the correct DOM elements", () => {
         // DOM elements that must be present are-
         // Label (for question), Input, P Tag (error), OptionContainer, Submit
