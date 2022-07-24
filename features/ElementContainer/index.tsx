@@ -7,13 +7,13 @@ import RadioDisplayName from "../FormElements/RadioButtonElement/DisplayName";
 
 function ElementContainer() {
     return (
-        <div>
+        <section className="flex flex-col" style={{width: "200px", minHeight: "100vh"}}>
             <BooleanDisplayName />
             <InputDisplayName />
             <CheckboxDisplayName />
             <DropdownDisplayName />
             <RadioDisplayName />
-        </div>
+        </section>
     );
 }
 
