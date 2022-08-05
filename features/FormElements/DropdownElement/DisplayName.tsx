@@ -11,7 +11,7 @@ function DisplayName(props: Props) {
     return (
         <div className={DISPLAY_NAME_STYLE} onClick={event => props.onClick("dropdown")}>
             <Image alt="dropdown-element" src={IconImage} width="38px" height="24px"/>
-            <span className="content-center gap-2 p-2">Drop Down</span>
+            <span className="content-center gap-2 p-2" style={{fontFamily: "Mulish"}}>Drop Down</span>
         </div>
     );
 }

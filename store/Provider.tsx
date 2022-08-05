@@ -1,13 +1,15 @@
 import React, { useReducer } from "react";
 import { AllowedElements } from "../features/constants";
+import FormElement from "../features/FormElements/FormElement";
 import { reducer } from "./reducers";
 import { actions, initialState, Actions } from "./store";
 import { FormDataTypes } from "./store";
 
 type FormDataContextType = {
-    formData: FormDataTypes[],
+    formData: FormElement[],
     creationDialogData: AllowedElements | "",
     triggerCreationDialog: (elementType: AllowedElements) => void,
+    abortCreationDialog: () => void,
     addFormElement: () => void,
     removeFormElement: () => void,
 }
@@ -29,6 +31,12 @@ function Provider({ children}: Props) {
                 type: actions.TRIGGER_CREATION_DIALOG as Actions,
                 payload: elementType
             })
+        },
+        abortCreationDialog: () => {
+            dispatch({
+                type: actions.ABORT_FORM_ELEMENT_CREATION as Actions,
+                payload: {},
+            });
         },
         addFormElement: () => {
             console.log("Called add");

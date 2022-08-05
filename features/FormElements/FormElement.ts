@@ -20,11 +20,6 @@ interface FormElement {
     getElementPreviewComponent(): JSX.Element;
 
     /*
-     * This component uses the name and icon to display this form element in the ElementContainer.
-     */
-    getDisplayComponent(): JSX.Element;
-
-    /*
      * Converts the form element and its data into JSON format. This JSON format is sent to the
      * backend and stored in the database.
      */

@@ -40,30 +40,42 @@ function CreationDialog(props: Props) {
     }
 
     return (
-        <form role="form">
+        <form role="form" className="p-5 flex flex-col">
             <label 
                 htmlFor="boolean-question-input"
                 id="boolean-question-label"
+                className="subpixel-antialiased font-medium mb-5"
             >
                 Question you want the user to see
-            </label>
+            </label><br />
 
             <input 
                 id="boolean-question-input" 
                 data-testid="element-boolean-creation-input"
                 value={inputQuestion}
                 onChange={handleInputChange}
+                className="px-3 py-3 mb-1 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full pl-10"
             />
 
-            <p data-testid="element-boolean-creation-error">{errorMessage}</p>
+            <p 
+                data-testid="element-boolean-creation-error"
+                className="mb-5"
+            >
+                {errorMessage}
+            </p>
 
-            <input 
-                type="checkbox" 
-                role="checkbox" 
-                id="question-checkbox"
-                value={String(isRequired)}
-                onChange={handleCheckboxChange}
-            />
+            <label
+                htmlFor="question-checkbox"
+            >
+                Is this input required?&nbsp;
+                <input 
+                    type="checkbox" 
+                    role="checkbox" 
+                    id="question-checkbox"
+                    value={String(isRequired)}
+                    onChange={handleCheckboxChange}
+                />
+            </label>
 
             <button 
                 type="submit" 
@@ -71,7 +83,7 @@ function CreationDialog(props: Props) {
                 id="element-boolean-creation-submit"
                 onClick={handleFormSubmit}
                 disabled={submitDisabled}
-            />
+            >Add Element</button>
         </form>
     );
 }

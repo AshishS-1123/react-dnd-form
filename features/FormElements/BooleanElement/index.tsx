@@ -1,8 +1,9 @@
-import React from "react";
+import React, { MouseEvent, useContext, useState } from "react";
 import FormElement from "../FormElement";
 import CreationDialog, { Props as CreationProps } from "./CreationDialog";
 import PreviewComponent, { Props as PreviewProps } from "./PreviewComponent";
-import DisplayName from "./DisplayName";
+import Dialog from "../../../components/Dialog";
+import { FormDataContext } from "../../../store/Provider";
 
 /**
  * BooleanElement will contain following data
@@ -10,6 +11,23 @@ import DisplayName from "./DisplayName";
  *   - isRequired: false
  *   - label: ""
  */
+
+function BooleanCreationDialog(props: CreationProps) {
+    const { abortCreationDialog } = useContext(FormDataContext);
+    const [open, setOpen] = useState(true);
+
+    const handleCloseDialog = (event: MouseEvent<HTMLButtonElement | HTMLDivElement>) => {
+        setOpen(false);
+        abortCreationDialog();
+    }
+
+    return (
+        <Dialog isOpen={open} closeDialog={handleCloseDialog}>
+            <CreationDialog onSubmit={props.onSubmit}/>
+        </Dialog>
+    );
+}
+
 class BooleanElement implements FormElement {
     name: string = "Boolean";
     icon: string = "some icon";
@@ -31,7 +49,7 @@ class BooleanElement implements FormElement {
     constructor() {}
 
     getElementCreationDialog(): JSX.Element {
-        return <CreationDialog onSubmit={this.creationDialogSubmitCallback}/>;
+        return <BooleanCreationDialog onSubmit={this.creationDialogSubmitCallback}/>;
     }
 
     getElementPreviewComponent(): JSX.Element {
@@ -42,10 +60,6 @@ class BooleanElement implements FormElement {
                 setResponse={this.previewSetResponseCallback}
             />
         );
-    }
-
-    getDisplayComponent(): JSX.Element {
-        return <DisplayName />;
     }
 
     toJSONString(): string {

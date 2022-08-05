@@ -50,10 +50,6 @@ class CheckboxElement implements FormElement {
         );
     }
 
-    getDisplayComponent(): JSX.Element {
-        return <DisplayName />;
-    }
-
     toJSONString(): string {
         const jsonObject = {
             type: 'checkbox',

@@ -11,7 +11,7 @@ function DisplayName(props: Props) {
     return (
         <div className={DISPLAY_NAME_STYLE} onClick={event => props.onClick("radio")}>
             <Image alt="radio-button-element" src={IconImage} width="38px" height="20px" />
-            <span className="content-center gap-2 p-2">Radio Button</span>
+            <span className="content-center gap-2 p-2" style={{fontFamily: "Mulish"}}>Radio Button</span>
         </div>
     );
 }

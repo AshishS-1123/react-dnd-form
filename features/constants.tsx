@@ -5,6 +5,6 @@ export const DISPLAY_NAME_STYLE = `
     cursor-pointer 
     border-fuchsia-600 border-2 rounded-md 
     bg-fuchsia-300
-    font-extrabold text-black
+    text-black
     shadow-xl
     `;

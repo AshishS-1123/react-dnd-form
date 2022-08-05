@@ -15,7 +15,7 @@ function ElementContainer() {
     }
 
     return (
-        <section className="flex flex-col" style={{width: "200px", minHeight: "100vh"}}>
+        <section className="flex flex-col z-0" style={{width: "200px", minHeight: "100vh"}}>
             <BooleanDisplayName onClick={handleFormElementClick}/>
             <InputDisplayName onClick={handleFormElementClick}/>
             <CheckboxDisplayName onClick={handleFormElementClick}/>
